@@ -1,0 +1,39 @@
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Generate New Invoice</h4>
+        <button type="button" class="close" data-dismiss="modal">X</button>
+      </div>
+        
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/commitpayment" method="POST">
+          <label>Payment Instrument</label>
+          <select class="form-select" aria-label="select" name = "instrumentType" >
+            <option selected>Chose Payment Instrument</option>    
+            <option value = 'Cheque'>Cheque</option>
+            <option value = 'Bank Desposit'>Bank Deposit</option>
+          </select>
+          <label>Instrument Reference</label>
+          <input type="text" class="form-control" name="instrumentRef" >
+          <label>Instrument Date</label>
+          <input type="date" class="form-control" name="instrumentDate" placeholder="dd-mm-yyyy" value=""
+        max="2030-12-31">
+          <label>Amount</label>
+          <input type="text" class="form-control" name="amount" >
+          <input type="hidden" name="invoiceID" value={{ invoice['ID'] }}>
+          <button type="submit" class="btn btn-primary">POST</button>
+        </form>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

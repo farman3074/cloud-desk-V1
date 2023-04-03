@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Desk Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h3>{{title}}</h3>
+      <table class="table table-striped">
+        <thead class="border border-warning">
+          <tr>
+            <th scope="col"><h5>Labels</h5></th>
+            <th scope="col"><h5>Values</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Member ID</th>
+            <td>{{ member['ID'] }}</td>
+          <tr>
+            <th scope="row">Company</th>
+            <td>{{ member['company'] }}</td>
+          <tr>
+            <th scope="row">Name</th>
+            <td>{{ member['name'] }}</td>
+          <tr>
+            <th scope="row">Phone</th>
+            <td>{{ member['phone'] }}</td>
+          <tr>
+            <th scope="row">Email</th>
+            <td>{{ member['email'] }}</td>
+          <tr>
+            <th scope="row">Address</th>
+            <td>{{ member['address'] }}</td>
+          <tr>
+            <th scope="row">Nature of Business</th>
+            <td>{{ member['nature'] }}</td>
+          <tr>
+            <th scope="row">Created On</th>
+            <td>{{ member['membership_date'] }}</td>
+        </tbody>
+      </table>
+      <a class="btn btn-warning" href="/members" role="button">BACK</a>
+    </div>
+  </body>
+</html>

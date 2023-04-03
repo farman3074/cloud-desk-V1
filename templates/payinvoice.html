@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Desk Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <h3>Confirm Payment</h3>
+      <form action="/commitpayment" method="POST">
+        <label>Payment Instrument</label>
+        <select class="form-select" aria-label="select" name = "instrumentType" >
+          <option selected>Chose Payment Instrument</option>    
+          <option value = 'Cheque'>Cheque</option>
+          <option value = 'Bank Desposit'>Bank Deposit</option>
+        </select>
+        <label>Instrument Reference</label>
+        <input type="text" class="form-control" name="instrumentRef" >
+        <label>Instrument Date</label>
+        <input type="date" class="form-control" name="instrumentDate" placeholder="dd-mm-yyyy" value=""
+        max="2030-12-31">
+        <label>Amount</label>
+        <input type="text" class="form-control" name="amount" >
+        <input type="hidden" name="invoiceID" value={{ invoiceID }}>
+        <button type="submit" class="btn btn-primary">POST</button>
+       <a class="btn btn-primary" href="/viewinvoice/{{invoiceID}}" role="button">CANCEL</a> 
+      </form>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+    </div>
+  </body>
+</html>

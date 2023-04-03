@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/templates/loginpage.css">
+    <title>CLOUDDESK APPLICATION</title>
+  <style>
+input[type=text], input[type=password]{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+  }
+
+button {
+    background-color: rgb(251,171,26);
+  border-color: orange;
+    color: whitesmoke;
+    padding: 14px 20px;
+    border-radius: 5px;
+    margin: 7px 0;
+    width: 100%;
+    font-size: 18px;
+  }
+
+button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+h1{
+    text-align: center;
+}
+
+    h2{
+    text-align: center;
+}
+
+form{
+    width:35rem;
+    margin: auto;
+    color:orange;
+}
+
+input{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+  }
+
+.headingsContainer{
+    text-align: center;
+}
+.mainContainer{
+    padding: 16px;
+}
+
+.subcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+
+.subcontainer a{
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+span.forgotpsd a{
+    float: right;
+    color: whitesmoke;
+    padding-top: 16px;
+  }
+
+.forgotpsd a{
+    color: rgb(74, 146, 235);
+  }
+  
+.forgotpsd a:link{
+    text-decoration: none;
+  }
+    
+ .register{
+    color: black;
+    text-align: center;
+  }
+  
+  .register a{
+    color: rgb(74, 146, 235);
+  }
+  
+  .register a:link{
+    text-decoration: none;
+  }
+    #logo{
+       display: block;
+        margin-left: auto;
+        margin-right: auto;
+      width: 100%;
+      max-height: 320px;
+      max-width: 320px;
+    }
+ 
+
+@media screen and (max-width: 600px) {
+  form{
+    width: 25rem;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  form{
+    width: 20rem;
+  }
+}
+    
+  </style>
+</head>
+<body>
+    <h2>MEMBERS LOGIN</h2>
+    <img id="logo" src="/static/logo.jpeg">
+    <form action="https://cloud-desk.farmanlodhi.repl.co/logincheck" method="post">
+        <!-- Headings for the form -->
+        <div class="headingsContainer">
+            <h3>Sign in with your username and password</h3>
+        </div>
+
+        <!-- Main container for all inputs -->
+        <div class="mainContainer">
+            <!-- Username -->
+            <label for="username">Your username</label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <br><br>
+
+            <!-- Password -->
+            <label for="pswrd">Your password</label>
+            <input type="password" placeholder="Enter Password" name="pswrd" required>
+
+            <!-- sub container for the checkbox and forgot password link -->
+            <div class="subcontainer">
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <p class="forgotpsd"> <a href="#">Forgot Password?</a></p>
+            </div>
+
+
+            <!-- Submit button -->
+            <button type="submit">Login</button>
+
+            <!-- Sign up link -->
+            <p class="register">Not a member?  <a href="#">Register here!</a></p>
+
+        </div>
+
+    </form>
+</body>
+</html>

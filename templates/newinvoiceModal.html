@@ -1,0 +1,42 @@
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Generate New Invoice</h4>
+          <button type="button" class="close" data-dismiss="modal">X</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="/newinvoice" method="POST">
+            <div>
+              <h6>Generate invoice for</h6>
+              <select class="form-select" aria-label="" name = 'memberInput' >
+                <option selected value = "0">ALL MEMBERS</option>
+              {% for member in members %}
+                <option value = "{{ member['ID'] }}"> {{ member['name']}} </option>
+              {% endfor %}      
+              </select>
+              <h6>From</h6>
+               <input type="date" class="form-control" name="fromInput" placeholder="dd-mm-yyyy" value="{{ currentdate }}"
+         max="2030-12-31">
+              <h6>To</h6>
+               <input type="date" class="form-control" name="toInput" placeholder="dd-mm-yyyy" value="{{ currentdate }}"
+        min="{{ currentdate }}" max="2030-12-31">
+            </div>
+            <h6>Selecting ALL MEMBERS will generate current months invoices for all active members!</h6>
+            <button type="submit" class="btn btn-warning" >Generate</button>
+          </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

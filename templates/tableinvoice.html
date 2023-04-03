@@ -1,0 +1,14 @@
+{% for invoice in invoices %}
+    <tr>
+      <th scope="row">{{ invoice['name'] }}</th>
+      <td>{{ invoice['header'] }}</td>
+      <td>{{ invoice['invoicedate'] }}</td>
+      <td>{{ invoice['duedate'] }}</td>
+      <td>{{ invoice['invoiceamt'] }}</td>
+      <td>{{ invoice['taxamount'] }}</td>
+      <td>{{ invoice['discount'] }}</td>
+      <td>{{ invoice['amtwithtax'] }}</td>
+      <td>{{ invoice['ispaid'] }}</td>
+      <td><a href="/viewinvoice/{{invoice['ID']}}">View</a> | <a href="#" >Pay</a></div> | <a href="#" >Delete</a></div></td>
+   
+{% endfor %}  

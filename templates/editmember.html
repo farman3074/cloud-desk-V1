@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Desk Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h3>{{title}}</h3>
+      
+      <form action="/commitmember" method="POST">
+      <table class="table table-striped">
+        <thead class="border border-warning">
+          <tr>
+            <th scope="col"><h5>Labels</h5></th>
+            <th scope="col"><h5>Values</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Member ID</th>
+            <td><input type="text" class="form-control" name = 'idInput' value="{{ member['ID'] }}" readonly></td>
+          <tr>
+            <th scope="row">Company</th>
+            <td><input type="text" class="form-control" name="companyInput" value="{{ member['company'] }}"></td>
+          <tr>
+            <th scope="row">Name</th>
+           <td><input type="text" class="form-control" name="nameInput" value="{{ member['name'] }}"></td>
+          <tr>
+            <th scope="row">Phone</th>
+           <td><input type="tel" class="form-control" name="phoneInput" " value="{{ member['phone'] }}"></td>
+          <tr>
+            <th scope="row">Email</th>
+            <td><input type="email" class="form-control" name="emailInput" value="{{ member['email'] }}"></td>
+          <tr>
+            <th scope="row">Address</th>
+            <td><input type="text" class="form-control" name="addressInput" value="{{ member['address'] }}"></td>
+          <tr>
+            <th scope="row">Nature of Business</th>
+            <td><input type="text" class="form-control" name="natureInput" value="{{ member['nature'] }}"></td>
+          <tr>
+            <th scope="row">Created On</th>
+            <td>Auto Generated</td>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary">Submit</button>
+       <a class="btn btn-primary" href="/members" role="button">BACK</a> 
+      </form>
+
+      <!--
+      <form action= "/commitmember" method="POST">
+  <table>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" value="John"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+    </table>
+</form> -->
+    </div>
+  </body>
+
+</html>

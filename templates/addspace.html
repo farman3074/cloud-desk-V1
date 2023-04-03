@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Desk Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h3>{{title}}</h3>
+      
+      <form action="/commitaddspace" method="POST">
+        <datalist id="types">
+          <option value="Yes">
+          <option value="No">
+        </datalist>
+      <table class="table table-striped">
+        <thead class="border border-warning">
+          <tr>
+            <th scope="col"><h5>Labels</h5></th>
+            <th scope="col"><h5>Values</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td><input type="text" class="form-control" name="nameInput"></td>
+          <tr>
+            <th scope="row">Type</th>
+           <td><select class="form-select" aria-label="Default select example" name = 'typeInput' required>
+              <option selected>Choose Space Type</option>
+                  <option value = 'Executive Office'> EXECUTIVE OFFICE </option>
+                   <option value = 'Private Office'> PRIVATE OFFICE </option>
+                   <option value = 'Work Desk'> WORK DESK </option>
+                   <option value = 'Board Room'> BOARD ROOM </option>
+                </select></td>
+          <tr>
+            <th scope="row">Floor</th>
+           <td><select class="form-select" aria-label="Default select example" name = 'floorInput' required>
+              <option selected>Choose Floor</option>
+                  <option value = 'Ground Floor'> Ground Floor </option>
+                   <option value = 'First Floor'> First Floor </option>
+                   <option value = 'Second Floor'> Second Floor </option>
+                   <option value = 'Lower Ground'> Lower Ground </option>
+                </select></td>
+          <tr>
+            <th scope="row">Seats</th>
+            <td><input type="number" class="form-control" name="seatsInput" ></td>
+          <tr>
+            <th scope="row">Area</th>
+            <td><input type="number" class="form-control" name="areaInput"></td>
+          <tr>
+            <th scope="row">List Rate</th>
+            <td><input type="number" class="form-control" name="rateInput"></td>
+          <tr>
+            <th scope="row">Rate Type</th>
+            <td><select class="form-select" aria-label="Default select example" name = 'ratetypeInput' required>
+              <option selected>Choose Rate Type</option>
+                  <option value = 'MONTHLY'> MONTHLY </option>
+                   <option value = 'WEEKLY'> WEEKLY </option>
+                   <option value = 'DAILY'> DAILY </option>
+                   <option value = 'HOURLY'> HOURLY </option>
+                </select></td>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary">Submit</button>
+       <a class="btn btn-primary" href="/spaces" role="button">BACK</a> 
+      </form>
+
+      <!--
+      <form action= "/commitmember" method="POST">
+  <table>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" value="John"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+    </table>
+</form> -->
+    </div>
+  </body>
+
+</html>
